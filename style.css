@@ -19,7 +19,7 @@ body {
   width: 95%;
   margin: auto;
 }
-.btn-success {
+/* .btn-success {
   border: none;
   outline: none;
   background-color: #33ff00;
@@ -28,10 +28,10 @@ body {
   border-radius: 5px;
   transition: all ease 0.1s;
 }
-.btn-success:active {
+.btn-success:hover {
   transform: translateY(5px);
   box-shadow: 0px 0px 0px 0px #5fd1f9;
-}
+} */
 .container1 {
   margin-left: 5%;
 }
@@ -43,7 +43,7 @@ body {
   margin-left: 5%;
 }
 .container3 {
-  /* display: none; */
+  display: none;
   position: absolute;
   top: 26%;
   left: 40%;

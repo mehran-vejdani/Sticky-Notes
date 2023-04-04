@@ -2,8 +2,25 @@ let container2 = document.querySelector(".container2");
 let container3 = document.querySelector(".container3");
 let checkIcon = document.querySelector(".check-icon");
 let XIcon = document.querySelector(".Xcheck-icon");
+const createTypeNoteBtn = document.querySelector(".btn-success");
 
 let i = 0;
+
+XIcon.addEventListener("click", () => {
+  typeNote();
+});
+
+function typeNote() {
+  console.log("hi");
+  if (container3.style.display == "none") {
+    container3.style.display = "block";
+  } else {
+    container3.style.display = "none";
+  }
+}
+createTypeNoteBtn.addEventListener("click", typeNote);
+
+// function createNote() {}
 
 function margin() {
   let random_margin = ["-5px", "1px", "5px", "10px", "15px", "20px"];
