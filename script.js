@@ -11,7 +11,6 @@ XIcon.addEventListener("click", () => {
 });
 
 function typeNote() {
-  console.log("hi");
   if (container3.style.display == "none") {
     container3.style.display = "block";
   } else {
@@ -20,7 +19,40 @@ function typeNote() {
 }
 createTypeNoteBtn.addEventListener("click", typeNote);
 
-// function createNote() {}
+checkIcon.addEventListener("click", createNote);
+
+function createNote() {
+  let noteText = document.querySelector("#note-text").value;
+
+  if (noteText === "") {
+    return (container2.innerHTML = "");
+  } else {
+    let node0 = document.createElement("div");
+    let node1 = document.createElement("h1");
+
+    node1.innerHTML = noteText;
+    node1.className = "noteStyle";
+
+    node1.style.margin = margin();
+    node1.style.transform = rotate();
+    node1.style.background = color();
+
+    node0.appendChild(node1);
+    container2.appendChild(node0);
+
+    node0.addEventListener("mouseenter", () => {
+      node1.style.transform = "scale(1.1)";
+    });
+    node0.addEventListener("mouseleave", () => {
+      node1.style.transform = "scale(1)";
+    });
+    node0.addEventListener("dblclick", () => {
+      node0.remove();
+    });
+  }
+
+  document.querySelector("#note-text").value = "";
+}
 
 function margin() {
   let random_margin = ["-5px", "1px", "5px", "10px", "15px", "20px"];
@@ -48,7 +80,7 @@ function color() {
     "#FF5F9E",
     "#A75D5D",
   ];
-  if (i > random_color - 1) {
+  if (i > random_color.length - 1) {
     i = 0;
   }
   return random_color[i++];
